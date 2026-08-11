@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>نمای اسپایدری | شیشه سکوریتی</title>
+    <title>درب نیمه‌اتوماتیک | شیشه سکوریتی</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         * { font-family: 'Vazir', sans-serif; }
-        body { background: #f4f6f9; overflow-x: hidden; }
+        
+        /* ===== انیمیشن گرادیان پس‌زمینه ===== */
+        body {
+            background: linear-gradient(-45deg, #e8edf5, #f4f6f9, #dce4ed, #c8d4e3);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .top-bar { background: #0b1a33; color: #fff; padding: 8px 0; border-bottom: 3px solid #d4af37; position: sticky; top: 0; z-index: 1060; }
         .top-bar .phone { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 1px; direction: ltr; }
         .top-bar .social-icons a { color: #fff; font-size: 1.6rem; margin: 0 8px; transition: 0.3s; display: inline-block; }
@@ -28,12 +42,11 @@
         .btn-gold:hover { transform: scale(1.05); background: #e6c85c; color: #0b1a33; }
         .section-title { font-size: 2.8rem; font-weight: 900; color: #0b1a33; position: relative; display: inline-block; margin-bottom: 40px; }
         .section-title::after { content: ''; position: absolute; bottom: -12px; right: 0; width: 80px; height: 5px; background: #d4af37; border-radius: 10px; }
-        .product-card { background: #fff; border-radius: 30px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); transition: 0.4s; border: 1px solid rgba(212,175,55,0.15); height: 100%; }
-        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+        .product-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-radius: 30px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: 0.4s; border: 1px solid rgba(212,175,55,0.15); height: 100%; }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); background: rgba(255,255,255,0.95); border-color: #d4af37; }
         .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 20px; margin-bottom: 15px; }
         .product-card .badge-gold { background: #d4af37; color: #0b1a33; font-weight: bold; padding: 4px 16px; border-radius: 60px; font-size: 0.75rem; align-self: flex-start; }
-        .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.5s; }
-        .gallery-img:hover { transform: scale(1.04); }
+        .product-card .operator-img-sm { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 3px solid #d4af37; margin-left: 10px; }
         .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 60px; font-weight: bold; color: #fff; transition: 0.3s; text-decoration: none; border: none; }
         .social-btn:hover { transform: scale(1.08); color: #fff; }
         .btn-whatsapp { background: #25d366; }
@@ -44,7 +57,6 @@
         .footer { background: #0b1a33; color: rgba(255,255,255,0.8); padding: 60px 0 30px; margin-top: 60px; border-top: 4px solid #d4af37; }
         .footer a { color: #d4af37; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
-        .spec-box { background: #fff; border-radius: 25px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); border-right: 6px solid #d4af37; height: 100%; }
         @media (max-width: 992px) { .navbar-custom { top: 0; } .hero { height: auto; min-height: 400px; padding: 80px 0; } .hero-content h1 { font-size: 2.5rem; } .section-title { font-size: 2rem; } }
     </style>
 </head>
@@ -77,12 +89,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-wrap">
                 <li class="nav-item"><a class="nav-link" href="simple.html">درب ساده</a></li>
-                <li class="nav-item"><a class="nav-link" href="semi.html">نیمه‌اتوماتیک</a></li>
+                <li class="nav-item"><a class="nav-link active" href="semi.html">نیمه‌اتوماتیک</a></li>
                 <li class="nav-item"><a class="nav-link" href="auto.html">اتوماتیک</a></li>
                 <li class="nav-item"><a class="nav-link" href="facade.html">نمای شیشه‌ای</a></li>
                 <li class="nav-item"><a class="nav-link" href="shower.html">وان دوش</a></li>
                 <li class="nav-item"><a class="nav-link" href="roof.html">روف گاردن</a></li>
-                <li class="nav-item"><a class="nav-link active" href="spider.html">اسپایدری</a></li>
+                <li class="nav-item"><a class="nav-link" href="spider.html">اسپایدری</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
             </ul>
         </div>
@@ -93,78 +105,54 @@
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content animate__animated animate__fadeInDown">
-        <h1>نمای اسپایدری</h1>
+        <h1>درب نیمه‌اتوماتیک</h1>
         <div class="gold-line"></div>
-        <p class="lead opacity-90">شیشه‌های ساختاری بدون قاب با اتصالات اسپایدر استیل ضدزنگ، مناسب برای نماهای مدرن و لوکس</p>
-        <a href="#products" class="btn-gold btn mt-3">مشاهده محصولات</a>
+        <p class="lead opacity-90">فریم لس و فریم دار با اپراتورهای پیشرفته <strong>هایدی (آلمان)</strong> و <strong>کورتکس (ترکیه)</strong></p>
+        <a href="#products" class="btn-gold btn mt-3">مشاهده برندها</a>
     </div>
 </section>
 
-<!-- محتوای اصلی (با عکس‌های جدید) -->
+<!-- محتوای اصلی -->
 <section class="container my-5" id="products">
-    <h2 class="section-title animate__animated animate__fadeInRight">محصولات اسپایدری</h2>
+    <h2 class="section-title animate__animated animate__fadeInRight">درب نیمه‌اتوماتیک فریم لس و فریم دار</h2>
     <div class="row g-4">
-        <div class="col-md-4 animate__animated animate__fadeInUp">
+        <!-- فریم لس (با عکس Dk.jpg) -->
+        <div class="col-md-6 animate__animated animate__fadeInLeft">
             <div class="product-card">
-                <img src="images/Sss.jpg" alt="اسپایدر سقف">
-                <span class="badge-gold">مقاوم در برابر باد</span>
-                <h5 class="fw-bold">اسپایدر سقف شیشه‌ای</h5>
-                <p class="text-muted small">اتصالات اسپایدر با قابلیت تنظیم زاویه، مناسب برای سقف‌های شیب‌دار و نورگیرهای بزرگ.</p>
+                <img src="images/Dk.jpg" alt="درب نیمه‌اتوماتیک فریم لس">
+                <span class="badge-gold">فریم لس</span>
+                <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم لس</h5>
+                <p class="text-muted small" style="line-height: 2;">
+                    طراحی <strong>بدون قاب</strong> با ظاهر مینیمال و مدرن. شیشه سکوریتی با ضخامت ۱۰ تا ۱۲ میلیمتر، همراه با اپراتور <strong>هایدی (آلمان)</strong> یا <strong>کورتکس (ترکیه)</strong>. مناسب برای فضاهای لوکس.
+                </p>
+                <div class="d-flex align-items-center mt-2">
+                    <img src="images/Op.png" class="operator-img-sm" alt="هایدی">
+                    <span class="fw-bold">هایدی HD-200</span>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <img src="images/Op2.webp" class="operator-img-sm" alt="کورتکس">
+                    <span class="fw-bold">کورتکس KX-150</span>
+                </div>
             </div>
         </div>
-        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+        <!-- فریم دار -->
+        <div class="col-md-6 animate__animated animate__fadeInRight">
             <div class="product-card">
-                <img src="images/Csss.webp" alt="اسپایدر نما">
-                <span class="badge-gold">طراحی نامحدود</span>
-                <h5 class="fw-bold">اسپایدر نمای ساختمان</h5>
-                <p class="text-muted small">سیستم اسپایدر استیل ۳۱۶ با شیشه لمینت سکوریتی، بدون نیاز به قاب و با دید کامل به بیرون.</p>
+                <img src="images/Dnf.jpg" alt="درب نیمه‌اتوماتیک فریم دار" onerror="this.src='images/Doh.jpg'">
+                <span class="badge-gold">فریم دار</span>
+                <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم دار</h5>
+                <p class="text-muted small" style="line-height: 2;">
+                    با <strong>فریم آلومینیومی</strong> مقاوم و ضدخش. مناسب برای پروژه‌های سنگین و تردد بالا. همراه با اپراتور <strong>هایدی (آلمان)</strong> یا <strong>کورتکس (ترکیه)</strong>.
+                </p>
+                <div class="d-flex align-items-center mt-2">
+                    <img src="images/Op.png" class="operator-img-sm" alt="هایدی">
+                    <span class="fw-bold">هایدی HD-200</span>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <img src="images/Op2.webp" class="operator-img-sm" alt="کورتکس">
+                    <span class="fw-bold">کورتکس KX-150</span>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
-            <div class="product-card">
-                <img src="images/S32.webp" alt="اسپایدر راهرو">
-                <span class="badge-gold">مقاوم در برابر زلزله</span>
-                <h5 class="fw-bold">اسپایدر راهرو و پل</h5>
-                <p class="text-muted small">اجرای پل‌های شیشه‌ای و راهروهای معلق با اتصالات اسپایدر و شیشه سکوریتی با مقاومت بالا.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- گالری -->
-<section class="container my-5">
-    <h2 class="section-title animate__animated animate__fadeInRight">نمونه پروژه‌های اسپایدری</h2>
-    <div class="row g-4">
-        <div class="col-md-3 col-6 animate__animated animate__zoomIn">
-            <img src="images/S3.jpg" class="gallery-img" alt="اسپایدر نما">
-        </div>
-        <div class="col-md-3 col-6 animate__animated animate__zoomIn animate__delay-1s">
-            <img src="images/S32.webp" class="gallery-img" alt="اسپایدر راهرو">
-        </div>
-        <div class="col-md-3 col-6 animate__animated animate__zoomIn animate__delay-2s">
-            <img src="images/Sss.jpg" class="gallery-img" alt="اسپایدر سقف">
-        </div>
-        <div class="col-md-3 col-6 animate__animated animate__zoomIn animate__delay-3s">
-            <img src="images/Csss.webp" class="gallery-img" alt="اسپایدر نمای لوکس">
-        </div>
-    </div>
-</section>
-
-<!-- مشخصات فنی -->
-<section class="container my-5">
-    <h2 class="section-title animate__animated animate__fadeInRight">مشخصات فنی اسپایدری</h2>
-    <div class="row g-4">
-        <div class="col-md-3 animate__animated animate__fadeInUp">
-            <div class="spec-box"><h6 class="fw-bold"><i class="bi bi-check-circle-fill text-warning"></i> اتصال اسپایدر</h6><p class="text-muted small">استیل ۳۱۶ ضدزنگ</p></div>
-        </div>
-        <div class="col-md-3 animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="spec-box"><h6 class="fw-bold"><i class="bi bi-check-circle-fill text-warning"></i> شیشه لمینت</h6><p class="text-muted small">۱۲ تا ۱۹ میلیمتر</p></div>
-        </div>
-        <div class="col-md-3 animate__animated animate__fadeInUp animate__delay-2s">
-            <div class="spec-box"><h6 class="fw-bold"><i class="bi bi-check-circle-fill text-warning"></i> مقاومت باد</h6><p class="text-muted small">تا سرعت ۲۰۰ کیلومتر</p></div>
-        </div>
-        <div class="col-md-3 animate__animated animate__fadeInUp animate__delay-3s">
-            <div class="spec-box"><h6 class="fw-bold"><i class="bi bi-check-circle-fill text-warning"></i> گارانتی</h6><p class="text-muted small">۲۰ ساله</p></div>
         </div>
     </div>
 </section>
