@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>درب ساده | شیشه سکوریتی</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* همان استایل‌های اصلی (برای جلوگیری از تکرار، از همان کد قبلی استفاده کنید) */
+        * { font-family: 'Vazir', sans-serif; }
+        body { background: #f4f6f9; overflow-x: hidden; }
+        .top-bar { background: #0b1a33; color: #fff; padding: 8px 0; border-bottom: 3px solid #d4af37; position: sticky; top: 0; z-index: 1060; }
+        .top-bar .phone { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 1px; direction: ltr; }
+        .top-bar .social-icons a { color: #fff; font-size: 1.6rem; margin: 0 8px; transition: 0.3s; display: inline-block; }
+        .top-bar .social-icons a:hover { color: #d4af37; transform: scale(1.2); }
+        .navbar-custom { background: rgba(11, 26, 51, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,175,55,0.3); padding: 12px 0; position: sticky; top: 48px; z-index: 1050; }
+        .navbar-custom .nav-link { color: #fff !important; font-weight: 500; margin: 0 12px; transition: 0.3s; border-bottom: 2px solid transparent; padding-bottom: 5px; }
+        .navbar-custom .nav-link:hover { color: #d4af37 !important; border-bottom-color: #d4af37; }
+        .navbar-custom .navbar-brand { color: #d4af37 !important; font-weight: 900; font-size: 1.8rem; }
+        .hero { position: relative; background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400') no-repeat center center/cover; height: 70vh; min-height: 400px; display: flex; align-items: center; color: #fff; }
+        .hero-overlay { position: absolute; top:0;left:0;right:0;bottom:0; background: rgba(11,26,51,0.7); backdrop-filter: blur(3px); }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 900; text-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+        .hero-content .gold-line { width: 120px; height: 5px; background: #d4af37; margin: 20px 0; border-radius: 10px; }
+        .btn-gold { background: #d4af37; color: #0b1a33; padding: 16px 45px; border-radius: 60px; font-weight: 900; transition: 0.3s; border: none; }
+        .btn-gold:hover { transform: scale(1.05); background: #e6c85c; color: #0b1a33; }
+        .btn-outline-gold { border: 2px solid #d4af37; color: #fff; padding: 16px 45px; border-radius: 60px; font-weight: 700; transition: 0.3s; background: transparent; }
+        .btn-outline-gold:hover { background: #d4af37; color: #0b1a33; }
+        .section-title { font-size: 2.8rem; font-weight: 900; color: #0b1a33; position: relative; display: inline-block; margin-bottom: 40px; }
+        .section-title::after { content: ''; position: absolute; bottom: -12px; right: 0; width: 80px; height: 5px; background: #d4af37; border-radius: 10px; }
+        .product-card { background: #fff; border-radius: 30px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); transition: 0.4s; border: 1px solid rgba(212,175,55,0.15); height: 100%; }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 20px; margin-bottom: 15px; }
+        .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 60px; font-weight: bold; color: #fff; transition: 0.3s; text-decoration: none; border: none; }
+        .social-btn:hover { transform: scale(1.08); color: #fff; }
+        .btn-whatsapp { background: #25d366; }
+        .btn-telegram { background: #0088cc; }
+        .btn-instagram { background: #e4405f; }
+        .btn-bale { background: #00a859; }
+        .btn-eitaa { background: #7c4dff; }
+        .footer { background: #0b1a33; color: rgba(255,255,255,0.8); padding: 60px 0 30px; margin-top: 60px; border-top: 4px solid #d4af37; }
+        .footer a { color: #d4af37; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 992px) { .navbar-custom { top: 0; } .hero { height: auto; min-height: 400px; padding: 80px 0; } .hero-content h1 { font-size: 2.5rem; } .section-title { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+<!-- تاپ بار ارتباطی (همان) -->
+<div class="top-bar">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="fw-light">📞 مشاوره و سفارش:</span>
+            <span class="phone" dir="ltr">۰۹۹۱-۷۵۸-۵۴۴۶</span>
+        </div>
+        <div class="social-icons">
+            <a href="https://wa.me/989917585446" target="_blank" title="واتساپ"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://t.me/yourusername" target="_blank" title="تلگرام"><i class="bi bi-telegram"></i></a>
+            <a href="https://instagram.com/yourusername" target="_blank" title="اینستاگرام"><i class="bi bi-instagram"></i></a>
+            <a href="https://bale.ai/yourusername" target="_blank" title="بله"><i class="bi bi-chat-dots"></i></a>
+            <a href="https://eitaa.com/yourusername" target="_blank" title="ایتا"><i class="bi bi-chat-square-text"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- منوی اصلی -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-gem"></i> Shisheh</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="simple.html">درب ساده</a></li>
+                <li class="nav-item"><a class="nav-link" href="semi.html">نیمه‌اتوماتیک</a></li>
+                <li class="nav-item"><a class="nav-link" href="auto.html">اتوماتیک</a></li>
+                <li class="nav-item"><a class="nav-link" href="facade.html">نمای شیشه‌ای</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- هدر اختصاصی -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content animate__animated animate__fadeInDown">
+        <h1>درب شیشه‌ای نیمه‌اتوماتیک</h1>
+        <div class="gold-line"></div>
+        <p class="lead opacity-90">همراه با اپراتورهای پیشرفته‌هایدی (آلمان) و کورتکس (ترکیه) برای عملکردی روان و بی‌صدا</p>
+        <a href="#products" class="btn-gold btn mt-3">مشاهده محصولات</a>
+    </div>
+</section>
+
+<!-- محتوای اصلی -->
+<section class="container my-5" id="products">
+    <h2 class="section-title animate__animated animate__fadeInRight">انواع درب ساده</h2>
+    <div class="row g-4">
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/600x400/0b1a33/d4af37?text=درب+لولایی" alt="درب لولایی">
+                <h5 class="fw-bold">درب لولایی شیشه‌ای</h5>
+                <p class="text-muted small">با یراق‌آلات کروم و شیشه سکوریتی ۱۰ میلیمتری، مناسب برای تردد روزمره. قابلیت نصب در ابعاد مختلف.</p>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/600x400/0b1a33/d4af37?text=درب+کشویی" alt="درب کشویی">
+                <h5 class="fw-bold">درب کشویی شیشه‌ای</h5>
+                <p class="text-muted small">سیستم ریل بی‌صدا، مناسب برای فضاهای کوچک و پارتیشن‌های اداری. طراحی مدرن و کم‌حجم.</p>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/600x400/0b1a33/d4af37?text=درب+چرخان" alt="درب چرخان">
+                <h5 class="fw-bold">درب چرخان شیشه‌ای</h5>
+                <p class="text-muted small">طراحی خاص برای هتل‌ها و مراکز تجاری با تردد بالا و جلوه‌ای منحصربه‌فرد. ساخته شده از شیشه لمینت.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- فوتر -->
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white"><i class="bi bi-gem" style="color:#d4af37;"></i> شیشه سکوریتی</h5>
+                <p class="small">پیشرو در صنعت شیشه و درب‌های اتوماتیک</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-white">دسترسی سریع</h6>
+                <p><a href="simple.html">درب ساده</a></p>
+                <p><a href="semi.html">درب نیمه‌اتوماتیک</a></p>
+                <p><a href="auto.html">درب اتوماتیک</a></p>
+                <p><a href="facade.html">نمای شیشه‌ای</a></p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-white">اطلاعات تماس</h6>
+                <p>📞 ۰۹۹۱-۷۵۸-۵۴۴۶</p>
+                <p>✉️ info@shisheh.com</p>
+            </div>
+        </div>
+        <hr class="bg-light opacity-25">
+        <p class="small text-center opacity-75">© ۲۰۲۵ تمامی حقوق محفوظ است</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
