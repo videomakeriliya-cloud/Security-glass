@@ -10,7 +10,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         * { font-family: 'Vazir', sans-serif; }
-        body { background: #f4f6f9; overflow-x: hidden; }
+        
+        /* ===== انیمیشن گرادیان پس‌زمینه (شبیه حس هدر) ===== */
+        body {
+            background: linear-gradient(-45deg, #e8edf5, #f4f6f9, #dce4ed, #c8d4e3);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .top-bar { background: #0b1a33; color: #fff; padding: 8px 0; border-bottom: 3px solid #d4af37; position: sticky; top: 0; z-index: 1060; }
         .top-bar .phone { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 1px; direction: ltr; }
         .top-bar .social-icons a { color: #fff; font-size: 1.6rem; margin: 0 8px; transition: 0.3s; display: inline-block; }
@@ -30,9 +44,9 @@
         .btn-outline-gold:hover { background: #d4af37; color: #0b1a33; }
         .section-title { font-size: 2.8rem; font-weight: 900; color: #0b1a33; position: relative; display: inline-block; margin-bottom: 40px; }
         .section-title::after { content: ''; position: absolute; bottom: -12px; right: 0; width: 80px; height: 5px; background: #d4af37; border-radius: 10px; }
-        .section-subtitle { color: #6c757d; font-size: 1.1rem; margin-bottom: 30px; }
-        .product-card { background: #fff; border-radius: 30px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); transition: 0.4s; border: 1px solid rgba(212,175,55,0.12); height: 100%; }
-        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); border-color: #d4af37; }
+        .section-subtitle { color: #2c3e50; font-size: 1.1rem; margin-bottom: 30px; font-weight: 500; }
+        .product-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-radius: 30px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: 0.4s; border: 1px solid rgba(212,175,55,0.15); height: 100%; }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-color: #d4af37; background: rgba(255,255,255,0.95); }
         .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; margin-bottom: 15px; }
         .product-card .badge-gold { background: #d4af37; color: #0b1a33; font-weight: bold; padding: 4px 16px; border-radius: 60px; font-size: 0.75rem; align-self: flex-start; }
         .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 60px; font-weight: bold; color: #fff; transition: 0.3s; text-decoration: none; border: none; }
@@ -140,33 +154,34 @@
     </div>
 </section>
 
-<!-- بخش ۲: نیمه‌اتوماتیک (فریم لس و فریم دار) -->
+<!-- بخش ۲: نیمه‌اتوماتیک (فریم لس با عکس Dk.jpg و فریم دار با Dnf.jpg) -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">درب نیمه‌اتوماتیک</h2>
     <p class="section-subtitle">فریم لس و فریم دار با اپراتورهای هایدی و کورتکس</p>
     <div class="row g-4">
         <div class="col-md-6 animate__animated animate__fadeInLeft">
             <div class="product-card">
-                <img src="images/Doh.jpg" alt="درب نیمه‌اتوماتیک فریم لس">
+                <!-- تغییر عکس فریم لس به Dk.jpg -->
+                <img src="images/Dk.jpg" alt="درب نیمه‌اتوماتیک فریم لس">
                 <span class="badge-gold">فریم لس</span>
                 <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم لس</h5>
-                <p class="text-muted small">طراحی بدون قاب، ظاهر مینیمال و مدرن. همراه با اپراتور هایدی (آلمان) یا کورتکس (ترکیه). مناسب برای فضاهای لوکس.</p>
+                <p class="text-muted small">طراحی بدون قاب، ظاهر مینیمال و مدرن. همراه با اپراتور هایدی (آلمان) یا کورتکس (ترکیه).</p>
                 <a href="semi.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده بیشتر</a>
             </div>
         </div>
         <div class="col-md-6 animate__animated animate__fadeInRight">
             <div class="product-card">
-                <img src="images/Dnf.jpg" alt="درب نیمه‌اتوماتیک فریم دار">
+                <img src="images/Dnf.jpg" alt="درب نیمه‌اتوماتیک فریم دار" onerror="this.src='images/Doh.jpg'">
                 <span class="badge-gold">فریم دار</span>
                 <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم دار</h5>
-                <p class="text-muted small">با فریم آلومینیومی مقاوم، مناسب برای پروژه‌های سنگین و تردد بالا. همراه با اپراتور هایدی یا کورتکس.</p>
+                <p class="text-muted small">با فریم آلومینیومی مقاوم، مناسب برای پروژه‌های سنگین و تردد بالا.</p>
                 <a href="semi.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده بیشتر</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- بخش ۳: اتوماتیک (۲ ستونه) -->
+<!-- بخش ۳: اتوماتیک -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">درب اتوماتیک</h2>
     <p class="section-subtitle">برندهای مطرح جهانی: لابل، کورتکس، مپورت، دریس</p>
@@ -176,7 +191,7 @@
                 <img src="images/La.jpg" alt="لابِل">
                 <span class="badge-gold">⭐⭐⭐⭐⭐ آلمان</span>
                 <h5 class="fw-bold mt-2">لابِل (Label) LS-300</h5>
-                <p class="text-muted small">پیشرفته‌ترین تکنولوژی سنسور مایکروویو و مادون‌قرمز. مناسب برای فرودگاه‌ها و مراکز خرید.</p>
+                <p class="text-muted small">پیشرفته‌ترین تکنولوژی سنسور مایکروویو و مادون‌قرمز.</p>
                 <a href="auto.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده</a>
             </div>
         </div>
@@ -185,7 +200,7 @@
                 <img src="images/To.jpeg" alt="کورتکس">
                 <span class="badge-gold">⭐⭐⭐⭐ ترکیه</span>
                 <h5 class="fw-bold mt-2">کورتکس (Kortex) KX-300</h5>
-                <p class="text-muted small">سیستم هیدرولیک پیشرفته، مقاوم در برابر استفاده سنگین. دارای باتری پشتیبان.</p>
+                <p class="text-muted small">سیستم هیدرولیک پیشرفته، مقاوم در برابر استفاده سنگین.</p>
                 <a href="auto.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده</a>
             </div>
         </div>
@@ -194,7 +209,7 @@
                 <img src="images/Map.jpg" alt="مپورت">
                 <span class="badge-gold">⭐⭐⭐⭐ چین</span>
                 <h5 class="fw-bold mt-2">مِپورت (Mepout) MP-200</h5>
-                <p class="text-muted small">اقتصادی و باکیفیت، مناسب برای پروژه‌های با بودجه متوسط. دارای سنسور حرکتی دقیق.</p>
+                <p class="text-muted small">اقتصادی و باکیفیت، مناسب برای پروژه‌های با بودجه متوسط.</p>
                 <a href="auto.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده</a>
             </div>
         </div>
@@ -203,7 +218,7 @@
                 <img src="images/De.jpg" alt="دریس">
                 <span class="badge-gold">⭐⭐⭐⭐⭐ ایتالیا</span>
                 <h5 class="fw-bold mt-2">دریس (Driss) DR-400</h5>
-                <p class="text-muted small">طراحی ایتالیایی با دقت بالا، ظاهر زیبا و عملکرد بی‌صدا. مناسب برای فضاهای لوکس.</p>
+                <p class="text-muted small">طراحی ایتالیایی با دقت بالا، ظاهر زیبا و عملکرد بی‌صدا.</p>
                 <a href="auto.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده</a>
             </div>
         </div>
@@ -323,7 +338,7 @@
 <!-- بخش تماس -->
 <section class="container my-5" id="contact">
     <h2 class="section-title animate__animated animate__fadeInRight">تماس با ما</h2>
-    <div class="bg-white p-4 p-md-5 rounded-5 shadow-lg">
+    <div class="bg-white p-4 p-md-5 rounded-5 shadow-lg" style="background: rgba(255,255,255,0.9) !important; backdrop-filter: blur(10px);">
         <div class="row g-4">
             <div class="col-md-6">
                 <h5 class="fw-bold">📞 شماره تماس مستقیم</h5>
