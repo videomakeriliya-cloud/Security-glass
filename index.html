@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>شیشه سکوریتی | آرمان ایمنی و زیبایی</title>
-    <!-- بوت‌استرپ -->
+    <title>شیشه سکوریتی | درب و نمای شیشه‌ای</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- فونت وزیر -->
+    <!-- Vazir Font -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
-    <!-- انیمیشن -->
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- آیکون‌ها -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         * { font-family: 'Vazir', sans-serif; }
-        body { background: #fff; direction: rtl; overflow-x: hidden; }
+        body { background: #f8f9fa; overflow-x: hidden; }
 
-        /* ---- تاپ بار با شماره و پیام‌رسان‌ها ---- */
-        .top-bar {
-            background: #0b1a33;
-            color: #fff;
+        /* ---------- منوی اصلی ---------- */
+        .navbar-custom {
+            background: rgba(11, 26, 51, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             padding: 10px 0;
-            font-size: 0.95rem;
-            border-bottom: 3px solid #d4af37;
+            position: sticky;
+            top: 0;
+            z-index: 1050;
         }
-        .top-bar .phone {
-            font-weight: 900;
-            color: #d4af37;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-        }
-        .top-bar .social-icons a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 8px;
+        .navbar-custom .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin: 0 10px;
             transition: 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
         }
-        .top-bar .social-icons a:hover { color: #d4af37; transform: scale(1.2); }
+        .navbar-custom .nav-link:hover {
+            color: #d4af37 !important;
+            border-bottom-color: #d4af37;
+        }
+        .navbar-custom .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: 900;
+            font-size: 1.6rem;
+        }
 
-        /* ---- هدر اصلی (Hero) با ویدئو پس‌زمینه (تصویر جایگزین) ---- */
+        /* ---------- هدر اصلی ---------- */
         .hero {
             position: relative;
-            background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1400') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400') no-repeat center center/cover;
             height: 100vh;
-            min-height: 600px;
+            min-height: 650px;
             display: flex;
             align-items: center;
             color: #fff;
@@ -51,19 +58,18 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(11, 26, 51, 0.7);
-            backdrop-filter: blur(2px);
+            background: rgba(11, 26, 51, 0.65);
+            backdrop-filter: blur(3px);
         }
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
-            text-align: right;
         }
         .hero-content h1 {
-            font-size: 4.5rem;
+            font-size: 4.2rem;
             font-weight: 900;
-            text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+            text-shadow: 0 5px 30px rgba(0,0,0,0.6);
             line-height: 1.2;
         }
         .hero-content .gold-line {
@@ -73,234 +79,302 @@
             margin: 20px 0;
             border-radius: 10px;
         }
-        .hero-content .btn-gold {
+        .btn-gold {
             background: #d4af37;
             color: #0b1a33;
-            padding: 18px 50px;
+            padding: 16px 45px;
             border-radius: 60px;
             font-weight: 900;
-            font-size: 1.2rem;
             transition: 0.3s;
             border: none;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
         }
-        .hero-content .btn-gold:hover { transform: scale(1.05); background: #e6c85c; }
-        .hero-content .btn-outline-gold {
+        .btn-gold:hover { transform: scale(1.05); background: #e6c85c; color: #0b1a33; }
+        .btn-outline-gold {
             border: 2px solid #d4af37;
             color: #fff;
-            padding: 18px 50px;
+            padding: 16px 45px;
             border-radius: 60px;
             font-weight: 700;
             transition: 0.3s;
+            background: transparent;
         }
-        .hero-content .btn-outline-gold:hover { background: #d4af37; color: #0b1a33; }
+        .btn-outline-gold:hover { background: #d4af37; color: #0b1a33; }
 
-        /* ---- بخش معرفی محصول ---- */
+        /* ---------- عنوان بخش‌ها ---------- */
         .section-title {
             font-size: 2.8rem;
             font-weight: 900;
             color: #0b1a33;
             position: relative;
             display: inline-block;
+            margin-bottom: 40px;
         }
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             right: 0;
             width: 80px;
-            height: 4px;
+            height: 5px;
             background: #d4af37;
             border-radius: 10px;
         }
 
-        .glass-card {
-            background: #f8f9fb;
+        /* ---------- کارت محصولات ---------- */
+        .product-card {
+            background: #fff;
             border-radius: 30px;
-            padding: 30px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
             transition: 0.4s;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             height: 100%;
         }
-        .glass-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-
-        .icon-gold { color: #d4af37; font-size: 2.5rem; }
-
-        /* ---- اسلایدر تصاویر (نمایشی) ---- */
-        .slider-img {
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        .product-card img {
             width: 100%;
-            height: 350px;
+            height: 220px;
             object-fit: cover;
-        }
-
-        /* ---- بخش آمار ---- */
-        .stat-box {
-            background: #0b1a33;
-            color: #fff;
-            padding: 40px 20px;
             border-radius: 20px;
-            border-bottom: 4px solid #d4af37;
+            margin-bottom: 15px;
         }
-        .stat-box .number { font-size: 3rem; font-weight: 900; color: #d4af37; }
+        .product-card .operator-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            margin-left: 10px;
+        }
+        .badge-gold {
+            background: #d4af37;
+            color: #0b1a33;
+            font-weight: bold;
+            padding: 5px 18px;
+            border-radius: 60px;
+        }
 
-        /* ---- تیم ما ---- */
-        .team-card {
-            background: #fff;
-            border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
+        /* ---------- گالری نمای شیشه‌ای ---------- */
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: 0.4s;
         }
-        .team-card:hover { transform: scale(1.02); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .team-card img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #d4af37; }
+        .gallery-img:hover { transform: scale(1.03); }
 
-        /* ---- نظرات ---- */
-        .testimonial-card {
-            background: #fff;
-            border-radius: 25px;
-            padding: 30px;
-            border-right: 6px solid #d4af37;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+        /* ---------- دکمه‌های ارتباطی ---------- */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 60px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.3s;
+            text-decoration: none;
         }
+        .social-btn:hover { transform: scale(1.05); color: #fff; }
+        .btn-whatsapp { background: #25d366; }
+        .btn-telegram { background: #0088cc; }
+        .btn-instagram { background: #e4405f; }
+        .btn-bale { background: #00a859; }
+        .btn-eitaa { background: #7c4dff; }
 
-        /* ---- فوتر ---- */
+        /* ---------- فوتر ---------- */
         .footer {
             background: #0b1a33;
             color: rgba(255,255,255,0.8);
             padding: 60px 0 30px;
+            margin-top: 60px;
         }
         .footer a { color: #d4af37; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
 
-        /* ---- ریسپانسیو ---- */
+        /* ---------- ریسپانسیو ---------- */
         @media (max-width: 768px) {
-            .hero { height: auto; min-height: 500px; padding: 60px 0; }
+            .hero { height: auto; min-height: 500px; padding: 80px 0; }
             .hero-content h1 { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
+            .product-card img { height: 160px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ========== تاپ بار ========== -->
-<div class="top-bar">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between">
-        <div class="d-flex align-items-center gap-2">
-            <span class="phone" dir="ltr">۰۹۹۱-۷۵۸-۵۴۴۶</span>
-            <span class="text-light opacity-75">|</span>
-            <span class="small">مشاوره و سفارش</span>
-        </div>
-        <div class="social-icons">
-            <a href="https://bale.ai/" target="_blank" title="بله"><i class="bi bi-chat-dots"></i></a>
-            <a href="https://eitaa.com/" target="_blank" title="ایتا"><i class="bi bi-chat-square-text"></i></a>
-            <a href="tel:09917585446" title="تماس"><i class="bi bi-telephone-fill"></i></a>
+<!-- ========== منوی اصلی ========== -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="#">Shisheh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#simple">درب ساده</a></li>
+                <li class="nav-item"><a class="nav-link" href="#semi">نیمه‌اتوماتیک</a></li>
+                <li class="nav-item"><a class="nav-link" href="#auto">اتوماتیک</a></li>
+                <li class="nav-item"><a class="nav-link" href="#facade">نمای شیشه‌ای</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
 
-<!-- ========== هدر اصلی ========== -->
+<!-- ========== هدر ========== -->
 <section class="hero">
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <div class="animate__animated animate__fadeInUp">
-            <span class="badge bg-gold text-dark px-4 py-2 rounded-pill" style="background:#d4af37;">برند برتر ۲۰۲۵</span>
-            <h1 class="mt-3">شیشه‌ای که <br>ایمنی را به <br>هنر تبدیل می‌کند</h1>
-            <div class="gold-line"></div>
-            <p class="lead opacity-90" style="max-width: 600px;">محصولی از تکنولوژی روز اروپا، با کیفیتی فراتر از استانداردهای جهانی. مناسب برای پروژه‌های لوکس و خاص.</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
-                <a href="#contact" class="btn-gold btn">دریافت مشاوره رایگان</a>
-                <a href="#gallery" class="btn-outline-gold btn">مشاهده نمونه کارها</a>
+    <div class="container hero-content animate__animated animate__fadeInDown">
+        <span class="badge bg-gold px-4 py-2 rounded-pill" style="background:#d4af37; color:#0b1a33;">برند پیشرو</span>
+        <h1 class="mt-3">درهای شیشه‌ای<br>نمایانی از <span style="color:#d4af37;">لوکس</span> و <span style="color:#d4af37;">ایمنی</span></h1>
+        <div class="gold-line"></div>
+        <p class="lead opacity-90">ارائه‌دهنده مدرن‌ترین درب‌های شیشه‌ای با اپراتورهای اروپایی و نمای شیشه‌ای با کیفیت بی‌نظیر</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#simple" class="btn-gold btn">مشاهده محصولات</a>
+            <a href="#contact" class="btn-outline-gold btn">مشاوره رایگان</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== بخش درب شیشه‌ای ساده ========== -->
+<section class="container my-5 pt-5" id="simple">
+    <h2 class="section-title">درب شیشه‌ای ساده</h2>
+    <div class="row g-4">
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+            <div class="product-card">
+                <img src="images/darb-sade.jpg" alt="درب شیشه‌ای ساده" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=درب+ساده'">
+                <h5 class="fw-bold">درب لولایی شیشه‌ای</h5>
+                <p class="text-muted small">مناسب برای ورودی منازل، ادارات و مغازه‌ها. با یراق‌آلات کروم و شیشه سکوریتی.</p>
+                <span class="badge-gold">محبوب</span>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="product-card">
+                <img src="images/darb-sade-2.jpg" alt="درب شیشه‌ای کشویی" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=درب+کشویی'">
+                <h5 class="fw-bold">درب کشویی شیشه‌ای</h5>
+                <p class="text-muted small">طراحی مدرن و کم‌صدا، مناسب برای فضاهای کوچک و دکوراسیون داخلی.</p>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="product-card">
+                <img src="images/darb-sade-3.jpg" alt="درب شیشه‌ای چرخان" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=درب+چرخان'">
+                <h5 class="fw-bold">درب چرخان شیشه‌ای</h5>
+                <p class="text-muted small">ایده‌آل برای ورودی هتل‌ها و مراکز تجاری با تردد بالا.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ========== بخش معرفی محصول (بدون قیمت) ========== -->
-<section class="container my-5 py-4">
-    <div class="row g-5 align-items-center">
-        <div class="col-lg-6 order-lg-2">
-            <span class="badge bg-dark text-white px-3 py-2 rounded-pill">درباره محصول</span>
-            <h2 class="section-title mt-2">شیشه سکوریتی <br>تمپر شده</h2>
-            <p class="mt-4" style="line-height: 2.2; font-size: 1.1rem;">
-                شیشه سکوریتی (تمپر شده) با استفاده از فرآیند حرارتی پیشرفته تولید می‌شود که مقاومت آن را در برابر ضربه، حرارت و فشار تا چندین برابر افزایش می‌دهد. 
-                این محصول نه تنها ایمنی بی‌نظیری را فراهم می‌کند، بلکه با شفافیت و جلوه بصری خیره‌کننده، زیبایی را به فضاهای شما هدیه می‌دهد.
-            </p>
-            <ul class="list-unstyled mt-3" style="line-height: 2.5;">
-                <li><i class="bi bi-check-circle-fill text-warning"></i> مقاومت ۵ برابر بیشتر از شیشه معمولی</li>
-                <li><i class="bi bi-check-circle-fill text-warning"></i> شکستن به قطعات ریز و بی‌خطر</li>
-                <li><i class="bi bi-check-circle-fill text-warning"></i> تحمل حرارت تا ۲۵۰ درجه سانتی‌گراد</li>
-                <li><i class="bi bi-check-circle-fill text-warning"></i> دارای گواهی CE و استاندارد اروپا</li>
-            </ul>
+<!-- ========== بخش درب شیشه‌ای نیمه‌اتوماتیک ========== -->
+<section class="container my-5 pt-5" id="semi">
+    <h2 class="section-title">درب شیشه‌ای نیمه‌اتوماتیک</h2>
+    <p class="text-muted mb-4">با اپراتورهای <strong>هایدی (آلمان)</strong> و <strong>کورتکس (ترکیه)</strong></p>
+    <div class="row g-4">
+        <div class="col-md-6 animate__animated animate__fadeInRight">
+            <div class="product-card">
+                <img src="images/darb-nime-heidy.jpg" alt="اپراتور هایدی" onerror="this.src='https://via.placeholder.com/600x300/0b1a33/d4af37?text=هایدی'">
+                <h5 class="fw-bold">اپراتور هایدی (آلمان)</h5>
+                <p class="text-muted small">فناوری آلمانی با کیفیت ساخت بالا، صدای بسیار کم و طول عمر عالی. مناسب برای درب‌های نیمه‌اتوماتیک سنگین.</p>
+                <div class="d-flex align-items-center mt-2">
+                    <img src="images/heidy-logo.jpg" class="operator-img" alt="هایدی" onerror="this.src='https://via.placeholder.com/60/0b1a33/d4af37?text=HD'">
+                    <span class="fw-bold">هایدی HDR-200</span>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 order-lg-1">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" alt="شیشه سکوریتی" class="img-fluid rounded-5 shadow-lg">
+        <div class="col-md-6 animate__animated animate__fadeInLeft">
+            <div class="product-card">
+                <img src="images/darb-nime-kortex.jpg" alt="اپراتور کورتکس" onerror="this.src='https://via.placeholder.com/600x300/0b1a33/d4af37?text=کورتکس'">
+                <h5 class="fw-bold">اپراتور کورتکس (ترکیه)</h5>
+                <p class="text-muted small">مقاوم در برابر شرایط آب و هوایی، مجهز به سیستم بازگشایی اضطراری و مناسب برای درب‌های ورودی ساختمان.</p>
+                <div class="d-flex align-items-center mt-2">
+                    <img src="images/kortex-logo.jpg" class="operator-img" alt="کورتکس" onerror="this.src='https://via.placeholder.com/60/0b1a33/d4af37?text=KT'">
+                    <span class="fw-bold">کورتکس KX-150</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ========== اسلایدر (گالری) ========== -->
-<section class="container my-5" id="gallery">
-    <h3 class="section-title text-center d-block mb-5" style="display: block !important;">نمونه پروژه‌های اجرا شده</h3>
+<!-- ========== بخش درب شیشه‌ای اتوماتیک ========== -->
+<section class="container my-5 pt-5" id="auto">
+    <h2 class="section-title">درب شیشه‌ای اتوماتیک</h2>
+    <p class="text-muted mb-4">با اپراتور <strong>لابل (آلمان)</strong> – پیشرو در صنعت درب‌های اتوماتیک</p>
     <div class="row g-4">
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600" class="slider-img" alt="نمای شیشه‌ای"></div>
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600" class="slider-img" alt="درب شیشه‌ای"></div>
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=600" class="slider-img" alt="پارتیشن شیشه‌ای"></div>
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+            <div class="product-card">
+                <img src="images/darb-auto-labell.jpg" alt="لابل" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=لابل'">
+                <h5 class="fw-bold">اپراتور لابل LS-300</h5>
+                <p class="text-muted small">سیستم پیشرفته با سنسورهای مایکروویو و مادون قرمز، باز و بسته‌شونده با سرعت قابل تنظیم.</p>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="product-card">
+                <img src="images/darb-auto-2.jpg" alt="درب اتوماتیک" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=درب+اتومات'">
+                <h5 class="fw-bold">درب اتوماتیک کشویی</h5>
+                <p class="text-muted small">مناسب برای مراکز خرید، فرودگاه‌ها و هتل‌ها با تردد بالا و نیاز به سرعت و ایمنی.</p>
+            </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="product-card">
+                <img src="images/darb-auto-3.jpg" alt="درب اتوماتیک چرخان" onerror="this.src='https://via.placeholder.com/400x300/0b1a33/d4af37?text=درب+چرخان+اتومات'">
+                <h5 class="fw-bold">درب اتوماتیک چرخان</h5>
+                <p class="text-muted small">ترکیب زیبایی و کارایی، با قابلیت تنظیم سرعت و توقف اضطراری.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- ========== مزایا ========== -->
-<section class="container my-5">
-    <h3 class="section-title text-center d-block mb-5" style="display: block !important;">چرا شیشه سکوریتی ما؟</h3>
+<!-- ========== بخش نمای شیشه‌ای ========== -->
+<section class="container my-5 pt-5" id="facade">
+    <h2 class="section-title">نمای شیشه‌ای (کرتین وال)</h2>
+    <p class="text-muted mb-4">طراحی و اجرای نماهای مدرن با شیشه سکوریتی</p>
     <div class="row g-4">
-        <div class="col-md-3 col-6"><div class="glass-card text-center"><i class="bi bi-shield-check icon-gold"></i><h6 class="mt-2">ایمنی کامل</h6><small class="text-muted">مقاوم در برابر نفوذ</small></div></div>
-        <div class="col-md-3 col-6"><div class="glass-card text-center"><i class="bi bi-sun icon-gold"></i><h6 class="mt-2">محافظ UV</h6><small class="text-muted">جذب ۹۹٪ اشعه مضر</small></div></div>
-        <div class="col-md-3 col-6"><div class="glass-card text-center"><i class="bi bi-brush icon-gold"></i><h6 class="mt-2">آسان‌تمیزی</h6><small class="text-muted">سطح نانو ضدخش</small></div></div>
-        <div class="col-md-3 col-6"><div class="glass-card text-center"><i class="bi bi-truck icon-gold"></i><h6 class="mt-2">ارسال اختصاصی</h6><small class="text-muted">با بسته‌بندی ویژه</small></div></div>
+        <div class="col-md-3 col-6 animate__animated animate__fadeInDown">
+            <img src="images/façade-1.jpg" class="gallery-img" alt="نمای شیشه‌ای" onerror="this.src='https://via.placeholder.com/400x250/0b1a33/d4af37?text=نما+۱'">
+        </div>
+        <div class="col-md-3 col-6 animate__animated animate__fadeInDown animate__delay-1s">
+            <img src="images/façade-2.jpg" class="gallery-img" alt="نمای شیشه‌ای" onerror="this.src='https://via.placeholder.com/400x250/0b1a33/d4af37?text=نما+۲'">
+        </div>
+        <div class="col-md-3 col-6 animate__animated animate__fadeInDown animate__delay-2s">
+            <img src="images/façade-3.jpg" class="gallery-img" alt="نمای شیشه‌ای" onerror="this.src='https://via.placeholder.com/400x250/0b1a33/d4af37?text=نما+۳'">
+        </div>
+        <div class="col-md-3 col-6 animate__animated animate__fadeInDown animate__delay-3s">
+            <img src="images/façade-4.jpg" class="gallery-img" alt="نمای شیشه‌ای" onerror="this.src='https://via.placeholder.com/400x250/0b1a33/d4af37?text=نما+۴'">
+        </div>
     </div>
 </section>
 
-<!-- ========== آمار ========== -->
-<section class="container my-5">
-    <div class="row g-4">
-        <div class="col-md-3 col-6"><div class="stat-box text-center"><div class="number">۱۲+</div><div>سال تجربه</div></div></div>
-        <div class="col-md-3 col-6"><div class="stat-box text-center"><div class="number">۵۸۰+</div><div>پروژه موفق</div></div></div>
-        <div class="col-md-3 col-6"><div class="stat-box text-center"><div class="number">۹۸%</div><div>رضایت مشتریان</div></div></div>
-        <div class="col-md-3 col-6"><div class="stat-box text-center"><div class="number">۱۵</div><div>کشور صادرات</div></div></div>
-    </div>
-</section>
-
-<!-- ========== تیم ما ========== -->
-<section class="container my-5">
-    <h3 class="section-title text-center d-block mb-5" style="display: block !important;">تیم حرفه‌ای ما</h3>
-    <div class="row g-4">
-        <div class="col-md-3 col-6"><div class="team-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><h6 class="mt-2">مهندس رضایی</h6><small>مدیر فنی</small></div></div>
-        <div class="col-md-3 col-6"><div class="team-card"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><h6 class="mt-2">مهندس کریمی</h6><small>متخصص کیفیت</small></div></div>
-        <div class="col-md-3 col-6"><div class="team-card"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><h6 class="mt-2">مهندس محمدی</h6><small>طراح صنعتی</small></div></div>
-        <div class="col-md-3 col-6"><div class="team-card"><img src="https://randomuser.me/api/portraits/women/4.jpg" alt=""><h6 class="mt-2">خانم حسینی</h6><small>مدیر فروش</small></div></div>
-    </div>
-</section>
-
-<!-- ========== نظرات ========== -->
-<section class="container my-5" id="contact">
-    <h3 class="section-title text-center d-block mb-5" style="display: block !important;">نظرات مشتریان</h3>
-    <div class="row g-4">
-        <div class="col-md-4"><div class="testimonial-card"><p class="fw-bold">سازنده برج میلاد</p><p class="text-muted">"کیفیت شیشه‌ها فراتر از انتظار ما بود. کاملاً مطابق با استانداردهای اروپایی."</p><span class="text-warning">★★★★★</span></div></div>
-        <div class="col-md-4"><div class="testimonial-card"><p class="fw-bold">مدیر هتل ۵ ستاره</p><p class="text-muted">"استفاده از این شیشه در نمای هتل، جلوۀ لوکس و منحصربه‌فردی به ساختمان بخشیده است."</p><span class="text-warning">★★★★★</span></div></div>
-        <div class="col-md-4"><div class="testimonial-card"><p class="fw-bold">مهندس ناظر پروژه</p><p class="text-muted">"مقاومت و شفافیت این محصول، آن را به گزینه‌ای بی‌نظیر برای پروژه‌های خاص تبدیل کرده است."</p><span class="text-warning">★★★★★</span></div></div>
-    </div>
-</section>
-
-<!-- ========== تماس ========== -->
-<section class="container my-5 py-4 text-center bg-light rounded-5 p-5">
-    <h3 class="fw-bold" style="color:#0b1a33;">برای مشاوره و دریافت قیمت با ما تماس بگیرید</h3>
-    <p class="lead">همین حالا با تیم متخصص ما صحبت کنید و بهترین راهکار را دریافت کنید.</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-        <a href="tel:09917585446" class="btn btn-dark btn-lg px-5 py-3 rounded-pill"><i class="bi bi-telephone-fill"></i> تماس: ۰۹۹۱۷۵۸۵۴۴۶</a>
-        <a href="https://bale.ai/" target="_blank" class="btn btn-success btn-lg px-5 py-3 rounded-pill"><i class="bi bi-chat-dots"></i> بله</a>
-        <a href="https://eitaa.com/" target="_blank" class="btn btn-primary btn-lg px-5 py-3 rounded-pill" style="background:#7c4dff; border-color:#7c4dff;"><i class="bi bi-chat-square-text"></i> ایتا</a>
+<!-- ========== بخش تماس و شبکه‌های اجتماعی ========== -->
+<section class="container my-5 pt-5" id="contact">
+    <h2 class="section-title">تماس با ما</h2>
+    <div class="bg-white p-5 rounded-5 shadow-sm">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5>شماره تماس:</h5>
+                <p class="display-6 fw-bold" style="color:#0b1a33;">۰۹۹۱-۷۵۸-۵۴۴۶</p>
+                <p class="mt-3">از طریق پیام‌رسان‌های زیر با ما در ارتباط باشید:</p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <a href="https://wa.me/989917585446" target="_blank" class="social-btn btn-whatsapp"><i class="bi bi-whatsapp"></i> واتساپ</a>
+                    <a href="https://t.me/yourusername" target="_blank" class="social-btn btn-telegram"><i class="bi bi-telegram"></i> تلگرام</a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-btn btn-instagram"><i class="bi bi-instagram"></i> اینستاگرام</a>
+                    <a href="https://bale.ai/yourusername" target="_blank" class="social-btn btn-bale"><i class="bi bi-chat-dots"></i> بله</a>
+                    <a href="https://eitaa.com/yourusername" target="_blank" class="social-btn btn-eitaa"><i class="bi bi-chat-square-text"></i> ایتا</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>آدرس دفتر مرکزی:</h5>
+                <p>تهران، خیابان ولیعصر، نبش خیابان ملاصدرا، پلاک ۲۰</p>
+                <h5 class="mt-3">ساعات کاری:</h5>
+                <p>شنبه تا چهارشنبه: ۹ صبح تا ۸ شب<br>پنج‌شنبه: ۹ تا ۱۵</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -308,15 +382,29 @@
 <footer class="footer">
     <div class="container">
         <div class="row text-center text-md-start">
-            <div class="col-md-4 mb-4"><h5 class="text-white">شیشه سکوریتی</h5><p class="small">ایمنی و زیبایی در بالاترین سطح</p></div>
-            <div class="col-md-4 mb-4"><h6 class="text-white">ارتباط با ما</h6><p class="small">📞 ۰۹۹۱۷۵۸۵۴۴۶</p><p class="small">✉️ info@securityglass.com</p></div>
-            <div class="col-md-4 mb-4"><h6 class="text-white">ساعات کاری</h6><p class="small">شنبه تا پنج‌شنبه: ۹ تا ۲۰</p><p class="small">جمعه: ۱۰ تا ۱۵</p></div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">شیشه سکوریتی</h5>
+                <p class="small">ارائه‌دهنده مدرن‌ترین درب‌ها و نمای شیشه‌ای</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-white">دسترسی سریع</h6>
+                <p><a href="#simple">درب ساده</a></p>
+                <p><a href="#semi">نیمه‌اتوماتیک</a></p>
+                <p><a href="#auto">اتوماتیک</a></p>
+                <p><a href="#facade">نمای شیشه‌ای</a></p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-white">ارتباط</h6>
+                <p>📞 ۰۹۹۱-۷۵۸-۵۴۴۶</p>
+                <p>✉️ info@shisheh.com</p>
+            </div>
         </div>
         <hr class="bg-light opacity-25">
         <p class="small text-center opacity-75">© ۲۰۲۵ تمام حقوق محفوظ است | طراحی شده با ❤️</p>
     </div>
 </footer>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
