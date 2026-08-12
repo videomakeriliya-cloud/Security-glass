@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <!-- ========================================== -->
-    <!-- عنوان صفحه -->
+    <!-- عنوان صفحه (مهم‌ترین تگ سئو) -->
     <!-- ========================================== -->
     <title>شیشه سکوریتی | درب اتوماتیک، نیمه اتوماتیک و نمای لوکس</title>
     
     <!-- ========================================== -->
-    <!-- توضیحات متا -->
+    <!-- توضیحات متا (جذاب برای کلیک در گوگل) -->
     <!-- ========================================== -->
     <meta name="description" content="تولید و اجرای تخصصی شیشه سکوریتی، درب اتوماتیک (لابِل، کورمکس، مپورت، دریس)، درب نیمه اتوماتیک، نمای شیشه‌ای، اسپایدر، روف گاردن، وان دوش و استخر. مشاوره رایگان: 09917585446">
     
     <!-- ========================================== -->
-    <!-- کلمات کلیدی (با نام صحیح) -->
+    <!-- کلمات کلیدی (همه موارد) -->
     <!-- ========================================== -->
     <meta name="keywords" content="شیشه سکوریت, شیشه سکوریتی, شیشه میرال, درب شیشه ای, درب سکوریت, درب میرال, در شیشه ای, در سکوریت, در میرال, درب لوکس, درب هوشمند, درب لولایی شیشه ای, درب کشویی شیشه ای, درب چرخان شیشه ای, درب نیمه اتوماتیک, درب اتوماتیک, درب فریم لس, درب فریم دار, اتوماتیک لابل, اتوماتیک کورمکس, اتوماتیک تورمکس, اتوماتیک مپورت, اتوماتیک دریس, کرتین وال, اسپایدر, اتصالات اسپایدر, نمای اسپایدر, اسپایدر نمای ساختمان, اسپایدر سقف, سقف اسپایدری, وان دوش, شیشه حمام, شیشه استخر, شیشه جکوزی, روف گاردن, سقف شیشه ای ثابت, سقف شیشه ای اتوماتیک, درب بازشو, درب ریلی, درب کشویی">
     
     <!-- ========================================== -->
-    <!-- لینک اصلی -->
+    <!-- لینک اصلی (جلوگیری از محتوای تکراری) -->
     <!-- ========================================== -->
     <link rel="canonical" href="https://videomakeriliya-cloud.github.io/Security-glass/">
     
     <!-- ========================================== -->
-    <!-- تگ‌های Open Graph -->
+    <!-- تگ‌های Open Graph (برای شبکه‌های اجتماعی) -->
     <!-- ========================================== -->
     <meta property="og:title" content="شیشه سکوریتی | درب اتوماتیک، نیمه اتوماتیک و نمای لوکس">
     <meta property="og:description" content="تولید و اجرای تخصصی شیشه سکوریتی، درب اتوماتیک و نیمه اتوماتیک با برندهای لابل، کورمکس، مپورت و دریس">
@@ -44,7 +44,7 @@
     <meta name="twitter:image" content="https://videomakeriliya-cloud.github.io/Security-glass/images/Csss.webp">
     
     <!-- ========================================== -->
-    <!-- داده‌های ساختاریافته (JSON-LD) -->
+    <!-- داده‌های ساختاریافته (JSON-LD) برای گوگل -->
     <!-- ========================================== -->
     <script type="application/ld+json">
     {
@@ -60,7 +60,26 @@
         "addressLocality": "تهران",
         "addressCountry": "IR"
       },
-      "openingHours": "Sa-Th 09:00-20:00"
+      "openingHours": "Sa-Th 09:00-20:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "15:00"
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/989917585446",
+        "https://t.me/yourusername",
+        "https://instagram.com/yourusername"
+      ]
     }
     </script>
     
@@ -74,6 +93,8 @@
     
     <style>
         * { font-family: 'Vazir', sans-serif; }
+        
+        /* ===== انیمیشن گرادیان پس‌زمینه ===== */
         body {
             background: linear-gradient(-45deg, #e8edf5, #f4f6f9, #dce4ed, #c8d4e3);
             background-size: 400% 400%;
@@ -86,6 +107,8 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        /* ===== هدر اصلی ===== */
         .hero {
             position: relative;
             background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1400') no-repeat center center/cover;
@@ -119,65 +142,222 @@
             margin: 25px 0;
             border-radius: 10px;
         }
-        .top-bar { background: #0b1a33; color: #fff; padding: 8px 0; border-bottom: 3px solid #d4af37; position: sticky; top: 0; z-index: 1060; }
-        .top-bar .phone { font-weight: 900; color: #d4af37; font-size: 1.4rem; letter-spacing: 1px; direction: ltr; }
-        .top-bar .social-icons a { color: #fff; font-size: 1.6rem; margin: 0 8px; transition: 0.3s; display: inline-block; }
-        .top-bar .social-icons a:hover { color: #d4af37; transform: scale(1.2); }
-        .navbar-custom { background: rgba(11, 26, 51, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,175,55,0.3); padding: 12px 0; position: sticky; top: 48px; z-index: 1050; }
-        .navbar-custom .nav-link { color: #fff !important; font-weight: 500; margin: 0 8px; transition: 0.3s; border-bottom: 2px solid transparent; padding-bottom: 5px; font-size: 0.9rem; }
-        .navbar-custom .nav-link:hover { color: #d4af37 !important; border-bottom-color: #d4af37; }
-        .navbar-custom .navbar-brand { color: #d4af37 !important; font-weight: 900; font-size: 1.8rem; }
-        .btn-gold { background: #d4af37; color: #0b1a33; padding: 18px 50px; border-radius: 60px; font-weight: 900; transition: 0.3s; border: none; box-shadow: 0 10px 35px rgba(212,175,55,0.4); }
-        .btn-gold:hover { transform: scale(1.06); background: #e6c85c; color: #0b1a33; }
-        .btn-outline-gold { border: 2px solid #d4af37; color: #fff; padding: 18px 50px; border-radius: 60px; font-weight: 700; transition: 0.3s; background: transparent; }
-        .btn-outline-gold:hover { background: #d4af37; color: #0b1a33; }
-        .section-title { font-size: 2.8rem; font-weight: 900; color: #0b1a33; position: relative; display: inline-block; margin-bottom: 40px; }
-        .section-title::after { content: ''; position: absolute; bottom: -12px; right: 0; width: 80px; height: 5px; background: #d4af37; border-radius: 10px; }
-        .section-subtitle { color: #2c3e50; font-size: 1.1rem; margin-bottom: 30px; font-weight: 500; }
+
+        /* ===== تاپ بار ارتباطی ===== */
+        .top-bar {
+            background: #0b1a33;
+            color: #fff;
+            padding: 8px 0;
+            border-bottom: 3px solid #d4af37;
+            position: sticky;
+            top: 0;
+            z-index: 1060;
+        }
+        .top-bar .phone {
+            font-weight: 900;
+            color: #d4af37;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            direction: ltr;
+        }
+        .top-bar .social-icons a {
+            color: #fff;
+            font-size: 1.6rem;
+            margin: 0 8px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .top-bar .social-icons a:hover {
+            color: #d4af37;
+            transform: scale(1.2);
+        }
+
+        /* ===== منوی اصلی ===== */
+        .navbar-custom {
+            background: rgba(11, 26, 51, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 12px 0;
+            position: sticky;
+            top: 48px;
+            z-index: 1050;
+        }
+        .navbar-custom .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin: 0 8px;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #d4af37 !important;
+            border-bottom-color: #d4af37;
+        }
+        .navbar-custom .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: 900;
+            font-size: 1.8rem;
+        }
+
+        /* ===== دکمه‌ها ===== */
+        .btn-gold {
+            background: #d4af37;
+            color: #0b1a33;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-weight: 900;
+            transition: 0.3s;
+            border: none;
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
+        }
+        .btn-gold:hover {
+            transform: scale(1.06);
+            background: #e6c85c;
+            color: #0b1a33;
+        }
+        .btn-outline-gold {
+            border: 2px solid #d4af37;
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-weight: 700;
+            transition: 0.3s;
+            background: transparent;
+        }
+        .btn-outline-gold:hover {
+            background: #d4af37;
+            color: #0b1a33;
+        }
+
+        /* ===== عنوان بخش‌ها ===== */
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0b1a33;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            right: 0;
+            width: 80px;
+            height: 5px;
+            background: #d4af37;
+            border-radius: 10px;
+        }
+        .section-subtitle {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* ===== کارت‌های محصول ===== */
         .product-card {
             background: #fff;
             border-radius: 30px;
             padding: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             transition: 0.4s;
-            border: 1px solid rgba(212,175,55,0.12);
+            border: 1px solid rgba(212, 175, 55, 0.12);
             height: 100%;
         }
         .product-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
             border-color: #d4af37;
         }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; margin-bottom: 15px; }
-        .product-card .badge-gold { background: #d4af37; color: #0b1a33; font-weight: bold; padding: 4px 16px; border-radius: 60px; font-size: 0.75rem; align-self: flex-start; }
-        .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 60px; font-weight: bold; color: #fff; transition: 0.3s; text-decoration: none; border: none; }
-        .social-btn:hover { transform: scale(1.08); color: #fff; }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .product-card .badge-gold {
+            background: #d4af37;
+            color: #0b1a33;
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            align-self: flex-start;
+        }
+
+        /* ===== معرفی جامع ===== */
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #1a2a3a;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: justify;
+        }
+
+        /* ===== دکمه‌های اجتماعی ===== */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 60px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.3s;
+            text-decoration: none;
+            border: none;
+        }
+        .social-btn:hover {
+            transform: scale(1.08);
+            color: #fff;
+        }
         .btn-whatsapp { background: #25d366; }
         .btn-telegram { background: #0088cc; }
         .btn-instagram { background: #e4405f; }
         .btn-bale { background: #00a859; }
         .btn-eitaa { background: #7c4dff; }
-        .footer { background: #0b1a33; color: rgba(255,255,255,0.8); padding: 60px 0 30px; margin-top: 60px; border-top: 4px solid #d4af37; }
-        .footer a { color: #d4af37; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .intro-text {
-            font-size: 1.2rem;
-            line-height: 2.2;
-            color: #1a2a3a;
-            background: rgba(255,255,255,0.7);
-            padding: 30px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212,175,55,0.2);
-            text-align: justify;
+
+        /* ===== فوتر ===== */
+        .footer {
+            background: #0b1a33;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 4px solid #d4af37;
         }
-        @media (max-width: 992px) { .navbar-custom { top: 0; } .hero { height: auto; min-height: 500px; padding: 100px 0; } .hero-content h1 { font-size: 2.8rem; } .section-title { font-size: 2.2rem; } .navbar-custom .nav-link { font-size: 0.8rem; margin: 0 4px; } }
-        @media (max-width: 576px) { .hero-content h1 { font-size: 2rem; } .top-bar .social-icons a { font-size: 1.2rem; margin: 0 4px; } }
+        .footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ریسپانسیو ===== */
+        @media (max-width: 992px) {
+            .navbar-custom { top: 0; }
+            .hero { height: auto; min-height: 500px; padding: 100px 0; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2.2rem; }
+            .navbar-custom .nav-link { font-size: 0.8rem; margin: 0 4px; }
+        }
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2rem; }
+            .top-bar .social-icons a { font-size: 1.2rem; margin: 0 4px; }
+        }
     </style>
 </head>
 <body>
 
-<!-- تاپ بار ارتباطی -->
+<!-- ===== تاپ بار ارتباطی ===== -->
 <div class="top-bar">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -194,7 +374,7 @@
     </div>
 </div>
 
-<!-- منوی اصلی -->
+<!-- ===== منوی اصلی ===== -->
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
         <a class="navbar-brand" href="index.html"><i class="bi bi-gem"></i> Shisheh</a>
@@ -216,7 +396,7 @@
     </div>
 </nav>
 
-<!-- هدر اصلی -->
+<!-- ===== هدر اصلی ===== -->
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content animate__animated animate__fadeInDown">
@@ -231,16 +411,14 @@
     </div>
 </section>
 
-<!-- ========================================== -->
-<!-- معرفی کامل و جامع (با اسم صحیح کورمکس) -->
-<!-- ========================================== -->
+<!-- ===== معرفی کامل و جامع ===== -->
 <section class="container my-5">
     <div class="intro-text animate__animated animate__fadeInUp">
         <p>
             <strong>شیشه سکوریتی</strong> به عنوان یکی از پیشروترین مجموعه‌های تخصصی در صنعت <strong>شیشه و درب‌های ساختمانی</strong>، با تکیه بر دانش فنی روز و استفاده از مدرن‌ترین تجهیزات، انواع <strong>درب‌های شیشه‌ای</strong> از جمله <strong>درب لولایی، کشویی و چرخان</strong> را با بالاترین کیفیت تولید و اجرا می‌کند. 
         </p>
         <p>
-            ما ارائه‌دهنده <strong>درب‌های نیمه‌اتوماتیک و اتوماتیک</strong> با برندهای معتبر جهانی مانند <strong>لابِل (آلمان)</strong>، <strong>کورمکس (ترکیه)</strong> (که بعضاً تورمکس نیز نامیده می‌شود)، <strong>مِپورت (چین)</strong> و <strong>دریس (ایتالیا)</strong> هستیم. همچنین <strong>درب‌های فریم لس و فریم دار</strong> با اپراتورهای <strong>هایدی</strong> و <strong>کورمکس</strong>، گزینه‌های ایده‌آلی برای پروژه‌های لوکس و مدرن هستند.
+            ما ارائه‌دهنده <strong>درب‌های نیمه‌اتوماتیک و اتوماتیک</strong> با برندهای معتبر جهانی مانند <strong>لابِل (آلمان)</strong>، <strong>کورمکس (ترکیه)</strong> (که بعضاً تورمکس نیز نامیده می‌شود)، <strong>مِپورت (چین)</strong> و <strong>دریس (ایتالیا)</strong> هستیم. همچنین <strong>درب‌های فریم لس و فریم دار</strong> با اپراتورهای <strong>هایدلی</strong> و <strong>کورمکس</strong>، گزینه‌های ایده‌آلی برای پروژه‌های لوکس و مدرن هستند.
         </p>
         <p>
             در بخش <strong>نمای شیشه‌ای</strong>، ما اجرای <strong>کرتین وال</strong> و <strong>سیستم اسپایدر</strong> (شیشه‌های بدون قاب با اتصالات اسپایدر استیل) را برای نماهای مدرن و مراکز تجاری بزرگ انجام می‌دهیم. همچنین <strong>روف گاردن</strong>، <strong>سقف‌های شیشه‌ای ثابت و اتوماتیک</strong>، <strong>وان دوش</strong>، <strong>شیشه حمام</strong>، <strong>استخر</strong> و <strong>جکوزی</strong> از دیگر خدمات تخصصی ما هستند.
@@ -254,7 +432,7 @@
     </div>
 </section>
 
-<!-- بخش ۱: درب ساده -->
+<!-- ===== بخش ۱: درب ساده ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">درب شیشه‌ای ساده</h2>
     <p class="section-subtitle">مناسب برای ورودی منازل، مغازه‌ها و دکوراسیون داخلی</p>
@@ -289,17 +467,17 @@
     </div>
 </section>
 
-<!-- بخش ۲: نیمه‌اتوماتیک -->
+<!-- ===== بخش ۲: نیمه‌اتوماتیک ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">درب نیمه‌اتوماتیک</h2>
-    <p class="section-subtitle">فریم لس و فریم دار با اپراتورهای هایدی و کورمکس</p>
+    <p class="section-subtitle">فریم لس و فریم دار با اپراتورهای هایدلی و کورمکس</p>
     <div class="row g-4">
         <div class="col-md-6 animate__animated animate__fadeInLeft">
             <div class="product-card">
                 <img src="images/Dk.jpg" alt="درب نیمه‌اتوماتیک فریم لس">
                 <span class="badge-gold">فریم لس</span>
                 <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم لس</h5>
-                <p class="text-muted small">طراحی بدون قاب، ظاهر مینیمال و مدرن. همراه با اپراتور هایدی (آلمان) یا کورمکس (ترکیه).</p>
+                <p class="text-muted small">طراحی بدون قاب، ظاهر مینیمال و مدرن. همراه با اپراتور هایدلی (آلمان) یا کورمکس (ترکیه).</p>
                 <a href="semi.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده بیشتر</a>
             </div>
         </div>
@@ -308,14 +486,14 @@
                 <img src="images/Dnf.jpg" alt="درب نیمه‌اتوماتیک فریم دار" onerror="this.src='images/Doh.jpg'">
                 <span class="badge-gold">فریم دار</span>
                 <h5 class="fw-bold mt-2">درب نیمه‌اتوماتیک فریم دار</h5>
-                <p class="text-muted small">با فریم آلومینیومی مقاوم، مناسب برای پروژه‌های سنگین و تردد بالا. همراه با اپراتور کورمکس (ترکیه).</p>
+                <p class="text-muted small">با فریم آلومینیومی مقاوم، مناسب برای پروژه‌های سنگین و تردد بالا. همراه با اپراتور هایدلی یا کورمکس.</p>
                 <a href="semi.html" class="btn btn-outline-dark btn-sm mt-2 rounded-pill">مشاهده بیشتر</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- بخش ۳: اتوماتیک -->
+<!-- ===== بخش ۳: اتوماتیک ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">درب اتوماتیک</h2>
     <p class="section-subtitle">برندهای مطرح جهانی: لابل، کورمکس، مپورت، دریس</p>
@@ -359,7 +537,7 @@
     </div>
 </section>
 
-<!-- بخش ۴: نمای شیشه‌ای -->
+<!-- ===== بخش ۴: نمای شیشه‌ای ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">نمای شیشه‌ای مدرن</h2>
     <p class="section-subtitle">کرتین وال با شیشه سکوریتی و اتصالات اسپایدر</p>
@@ -382,7 +560,7 @@
     </div>
 </section>
 
-<!-- بخش ۵: وان دوش -->
+<!-- ===== بخش ۵: وان دوش ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">وان دوش و شیشه حمام</h2>
     <p class="section-subtitle">شیشه سکوریتی برای حمام، استخر، سونا و جکوزی</p>
@@ -411,7 +589,7 @@
     </div>
 </section>
 
-<!-- بخش ۶: روف گاردن -->
+<!-- ===== بخش ۶: روف گاردن ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">روف گاردن و سقف شیشه‌ای</h2>
     <p class="section-subtitle">سقف‌های متحرک و ثابت، نورگیرهای لوکس و روف‌گاردن‌های مدرن با شیشه لمینت سکوریتی</p>
@@ -440,7 +618,7 @@
     </div>
 </section>
 
-<!-- بخش ۷: اسپایدری -->
+<!-- ===== بخش ۷: اسپایدری ===== -->
 <section class="container my-5">
     <h2 class="section-title animate__animated animate__fadeInRight">نمای اسپایدری</h2>
     <p class="section-subtitle">شیشه‌های بدون قاب با اتصالات اسپایدر استیل</p>
@@ -469,7 +647,7 @@
     </div>
 </section>
 
-<!-- بخش تماس -->
+<!-- ===== بخش تماس ===== -->
 <section class="container my-5" id="contact">
     <h2 class="section-title animate__animated animate__fadeInRight">تماس با ما</h2>
     <div class="bg-white p-4 p-md-5 rounded-5 shadow-lg">
@@ -496,7 +674,7 @@
     </div>
 </section>
 
-<!-- فوتر -->
+<!-- ===== فوتر ===== -->
 <footer class="footer">
     <div class="container">
         <div class="row text-center text-md-start">
